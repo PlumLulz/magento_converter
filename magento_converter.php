@@ -62,7 +62,10 @@ while (($line = fgets($openfile)) !== false) {
 }
 $timeend = microtime(true);
 $etime = number_format(($timeend - $timestart), 2);
-$total = $valid + $invalidformat + $invalidoptions;
+$total = number_format($valid + $invalidformat + $invalidoptions);
+$valid = number_format($valid);
+$invalidformat = number_format($invalidformat);
+$invalidoptions = number_format($invalidoptions);
 echo "\n\n$total Total lines processed.\n";
 echo "$valid Valid hashes.\n";
 echo "$invalidformat Invalid hash format.\n";
