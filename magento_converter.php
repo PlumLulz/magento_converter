@@ -8,15 +8,18 @@ if (count($argv) != 3) {
 	die();
 }
 
+$timestart = microtime(true);
 $input = $argv[1];
 $output = $argv[2];
 $invalidformat = 0;
 $invalidoptions = 0;
 $valid = 0;
 
+
 # Read input file line by line
 $openfile = fopen($input, "r");
 echo "Processing hashes...";
+
 while (($line = fgets($openfile)) !== false) {
 	$parse = explode(":", $line);
 	if (count($parse) != 3) {
@@ -57,9 +60,12 @@ while (($line = fgets($openfile)) !== false) {
 		}
 	}
 }
+$timeend = microtime(true);
+$etime = number_format(($timeend - $timestart), 2);
 $total = $valid + $invalidformat + $invalidoptions;
 echo "\n\n$total Total lines processed.\n";
 echo "$valid Valid hashes.\n";
 echo "$invalidformat Invalid hash format.\n";
-echo "$invalidoptions Invalid options.";
+echo "$invalidoptions Invalid options.\n";
+echo "Exection time: $etime seconds\n";
 ?>
