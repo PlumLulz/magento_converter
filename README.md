@@ -3,4 +3,5 @@ Convert Magento2 hashes to the $argon2id format.
 
 Usage: php magento_converter.php input.txt output.txt
 
-<img width="542" src="https://github.com/user-attachments/assets/083dfc6a-c0e0-43da-9742-be5a8b27c078">
+<img width="595" src="https://github.com/user-attachments/assets/eaa85380-be35-4234-a2fe-0168e86b094d">
+
